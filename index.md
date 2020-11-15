@@ -1,28 +1,365 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Website coming soon</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm mughees!</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+	<link rel="stylesheet" type="text/css" href="webpage/bootstrap.min.css"/>
+    <script language="javascript" src="webpage/jquery.min.js"></script>
+	<script language="javascript" src="webpage/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="webpage/cssReset.css"/>
+	<title>Diganta Misra</title>
+	<meta name="description" content="Personal website for Hafiz Mughees Ahmad. Mughees is currently working a Research Associate at Computer Vision Lab at Istanbul Medipol University, Turkey">
+	<meta name="keywords" content="mughees">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156016426-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156016426-1');
+</script>
+
+</head>
+<body>
+<style type='text/css'>
+	body{
+		font-family:arial,"Microsoft YaHei",微软雅黑,宋体,Helvetica;
+		font-size:15px;
+	}
+	/*
+		div.content:
+			provide the content div in the middle
+	*/
+	body div.content{
+		/*width:1280px;*/
+		width:1000px;
+		margin:0 auto;
+		line-height:30px;
+	}
+	/*
+		header wrapper
+	*/
+	body div.header{
+		background-color:#2196F3;
+	}
+	body div.header > div.content{
+		padding:10px;
+	}
+	/*
+		footer1
+	*/
+	body div.footer1{
+		margin-top:30px;
+		background-color:#64B5F6;
+	}
+	/*
+		footer2
+	*/
+	body div.footer2{
+		background-color:#2196F3;
+	}
+	body div.footer > div.content{
+		padding:10px;
+	}
+	body div.footer1 > div.content{
+		padding:20px;
+		line-height:40px;
+		font-size:1.2em;
+	}
+	/*
+		utils css
+	*/
+	div.white-text{
+		color:white;
+	}
+	div.content > div.title{
+		padding:20px 0;
+		border-top:1px silver solid;
+		margin-top:30px;
+		font-size:2em;
+		font-weight:bold;
+	}
+	body a{
+		text-decoration:none;
+	}
+	div.content ul{
+		list-style: disc inside none;
+	}
+	div.content ol{
+		list-style: none inside none;
+	}
+	div.content li{
+		line-height:30px;
+		padding-bottom:5px;
+	}
+	div.content div.float-right{
+		float:right;
+	}
+</style>
+<!-- css for bio -->
+<style type="text/css">
+	/*
+		bio
+	*/
+	div.bio{
+		font-size:1.2em;
+	}
+	div.bio > div.left{
+		float:left;
+		width:250px;
+	}
+	div.bio > div.left > img.me{
+		max-height:260px;
+		margin:10px;
+		max-width:230px;
+		margin-top:20px;
+		margin-left:0px;
+	}
+
+	div.bio > div.right{
+		margin:0 0 0 260px;
+		min-height:350px;
+	}
+	div.bio > div.right > div.line.name{
+		padding:15px 0;
+		line-height:40px;
+	}
+	div.bio > div.right > div.name > span.name,div.bio > div.right > div.name > span.chineseName{
+		font-size:2em;
+		font-weight:bold;
+	}
+	div.bio > div.right > div.name > span.chinesesName{
+		font-family:"Microsoft YaHei",微软雅黑,宋体,Helvetica,arial;
+	}
+	div.bio > div.right > div.name > span.misc{
+		font-size:1.5em;
+		font-weight:bold;
+	}
+	div.bio > div.right > div.line.school{
+		padding:5px 0;
+	}
+
+	div.bio > div.right > div.line.office{
+		padding:5px 0;
+	}
+
+</style>
+<!-- quick link and intro -->
+<style type="text/css">
+div.quickLink{
+	min-height:70px;
+}
+div.quickLink > .block{
+	display:block;
+	float:left;
+	padding:10px 0px;
+	text-align:center;
+	border:1px silver solid;
+	border-radius:5px;
+	box-shadow:2px 2px 1px silver;
+	width:140px;
+	margin-right:50px;
+	margin-top:20px;
+	cursor:pointer;
+}
+</style>
+<!-- research and education -->
+<style type="text/css">
+div.research > ul > li > span.title,div.research > ul > li > div.time,
+div.education > ul > li > span.title,div.education > ul > li > div.time,
+div.pro > ul > li > span.title{
+	font-weight:bold;
+	font-size:1.1em;
+}
+div.research > ul > li > div.info,
+div.education > ul > li > div.info,
+div.pro > ul > li > div.info{
+	padding-left:20px;
+	word-wrap:break-word;
+}
+</style>
+<!-- publications -->
+<style type="text/css">
+div.publications > ol > li{
+	padding-bottom: 30px;
+}
+div.publications > ol > li > span.title{
+	font-weight:bold;
+	font-size:1.2em;
+}
+div.publications > ol > li > div.info{
+	padding-left:20px;
+	word-wrap:break-word;
+}
+div.publications > ol > li > div.info.italic{
+	font-style: italic;
+}
+div.publications div.imgblock{
+	float:left;
+	height:180px;
+	width:300px;
+	padding:10px;
+	margin-right:30px;
+	text-align: center;
+}
+div.publications div.imgblock > img{
+	max-width:100%;
+	max-height:100%;
+}
+img.press{
+	height:20px;
+}
+div.bio > div.left > a.quickLink{
+	margin-right:15px;
+	width: 30px;
+}
+div.bio > div.left > a.quickLink > img{
+	width: 30px;
+	height:30px;
+}
+</style>
+<div class="header">
+	<div class="content white-text">
+		Hafiz Mughees Ahmad
+	</div>
+</div>
+
+
+<div class="content bio">
+	<!-- bio -->
+	<div class="left">
+		<img class='me' src="assets/mughees.jpg"></img>
+		<br/>
+		<a class="quickLink" href="https://scholar.google.com/citations?user=uZSLvBIAAAAJ&hl=en">
+			<img class='scholar' style="" src="assets/googlescholar.png"></img>
+		</a>
+		<a class="quickLink" href="https://github.com/mugheesahmad">
+			<img class='github' style="" src="assets/github.png"></img>
+		</a>
+		<a class="quickLink" href="https://twitter.com/">
+			<img class='twitter' style="" src="assets/twitter.png"></img>
+		</a>
+		<a class="quickLink" href="https://www.youtube.com/">
+			<img class='youtube' style="height:20px" title="My Youtube channel" src="assets/yt.png"></img>
+		</a>
+		<a class="quickLink" href="">
+			<img class='paperspace' style="height:25px" title="Paperspace Author Page" src="assets/paperspace.png"></img>
+		</a>
+
+	</div>
+	<div class="right">
+		<div class="line name">
+			<span class="name">Diganta Misra</span>
+		</div>
+		<div class="line school">
+			Founder & Research Student
+		</div>
+		<div class="line school">
+			<a href="https://landskapeai.github.io/">Landskape</a>
+		</div>
+		<br/>
+		<div class="line office">
+			Email: mishradiganta91[at]gmail[dot]com
+		</div>
+		<div class="line office">
+			<i>Please mention <b>Landskape</b> in the subject while sending mails.</i> 
+			<br>
+			[<a href="https://drive.google.com/file/d/1mCD5CdOtOGXy_kRfjI5X0ObMtyL3qnob/view?usp=sharing">Resume</a>] & [<a href="https://drive.google.com/file/d/1KpcZUs0ihXt66k7PGLq8nmPy8I4fPn_E/view?usp=sharing">Curriculum Vitae</a>]
+		</div>
+	</div>
+</div>
+
+<div class="content quickLink">
+	<a class="block" href="#publications">Publications</a>
+	<a class="block" href="#research">Research</a>
+	<a class="block" href="https://github.com/mugheesahmad" target="_blank">Code</a>
+	<a class="block" href="#teaching">Talks</a>
+</div>
+
+<div class="content intro">
+	<div class='title'>Introduction</div>
+	Greetings! I am research associate at CCV lab at Istanbul Technical University, Turkey and trying to solve the inverse problem in the videos. <br/>
+	My research interests include Single Image Super Resolution, Video Super resolution and their application in the Remote Sensing and Aerial Imagery. <br/>
+	
+</div>
+
+<div class="content news">
+	<a name="news"></a>
+	<div class="title">News</div>
+	<ul>
+		<li>[10/2020] Journal paper titled as <a href="https://www.mdpi.com/2220-9964/9/10/560/htm">Glacial Lakes Mapping Using Multi Satellite PlanetScope Imagery and Deep Learning published</a> at ISPRS International Journal of Geo-Information</li>
+
+	</ul>
+</div>
+
+
+<div class="content research">
+	<a name="research"></a>
+	<div class="title">Research and Experience</div>
+	<ul>
+		<li>
+			<span class="title">Student Researcher and Founder at <a href="https://landskapeai.github.io/" target="_blank">Landskape</a>  </span> <div class="float-right time">September 2019 - Present</div>
+			<div class="info">
+				Working on deep learning theory, non-convex optimization, attention mechanisms, non-linear dynamics and efficient network design. <br>
+				Collaboration with students/researchers/faculty from MILA, UIUC, IIT-G, KAIST, Google, Microsoft, NUS, HKU and CMU. <br>
+				Mentored by <a href="https://sites.google.com/site/jaegulchoo/" target="_blank">Assc. Prof. Jaegul Choo</a>. <br>
+				Visit our <a href="https://landskapeai.github.io/" target="_blank">page</a> for further details on publications and members/ affiliates. 
+			</div>
+		</li>
+		<li>
+			<span class="title">Research Associate at Laboratory of Space Research, Hong Kong University (LSR-HKU)</span> <div class="float-right time">January 2020 - Present</div>
+			<div class="info">
+				Working on Planetary Nebulae analysis using deep learning and computer vision based approaches. <br>
+				Mentored by <a href="https://www.lsr.hku.hk/member/kris-stern/" target="_blank">Kris Stern</a> and <a href="https://www.physics.hku.hk/people/academic/5206" target="_blank">Prof. Quentin A. Parker</a>.<br>
+				Visit my LSR Profile on the HKU LSR directory <a href="https://www.lsr.hku.hk/member/diganta-misra/" target="_blank">here</a>. 
+			</div>
+		</li>
+		<li>
+			<span class="title">Deep Learning Content Developer, Paperspace</span> <div class="float-right time">July 2020 - Present</div>
+			<div class="info">
+				Working on constructing extensive reviews of state of the art and novel papers in the domain of computer vision along with code implementation in PyTorch using the resources offered by Paperspace Gradient. <br>
+				Currently involved in constructing a blog series on <i>Attention Mechanisms in Computer Vision</i> along with reviews of papers from CVPR and ECCV 2020. <br>
+				Authored articles can be viewed on my <a href="https://blog.paperspace.com/author/diganta/" target="_blank">Paperspace Profile</a>. 
+			</div>
+		</li>
+		<li>
+			<span class="title">Research Intern at Bennett University</span> <div class="float-right time">June 2018 - Aug 2018</div>
+			<div class="info">
+				Worked on large scale visual recognition and high performance computing for deep learning based vision applications. <br>
+				Advised by <a href="https://scholar.google.co.in/citations?user=quiG2CwAAAAJ&hl=en" target="_blank">Prof Dr. Deepak Garg</a> and <a href="https://scholar.google.co.in/citations?user=ZYXq9xoAAAAJ&hl=en" target="_blank">Dr. Suneet Gupta</a>.
+			</div>
+		</li>
+		<li>
+			<span class="title">Data Science Intern at CSIR-CDRI</span> <div class="float-right time">June 2018 - Jan 2019</div>
+			<div class="info">
+				During this internship at the Council of Scientific and Industrial Research - Central Drug Research Institute (CSIR-CDRI), I was involved in building the analytical pipeline, data collection, pre-processing of data, cleaning of data, Geo-spatial Analysis of data and Document writing for the project on understanding demographics of Venture Capital and Early Seed Investments. <br>
+				As a part of a team of three, I was advised and mentored by <a href="http://brainnart.com/" target="_blank">Dr. Sukant Khurana</a>.
 				
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:ahmadmughees@gmail.com">email</a></li>
-        		<li><a href="https://github.com/mugheesahmad">github.com/mugheesahmad</a></li>
-			</ul>
-		</footer>
-	</body>
+			</div>
+		</li>
+		<li>
+			<span class="title">Intern at Indian Institute of Technology, Kharagpur (IIT-KGP)</span> <div class="float-right time">May 2018 - June 2018</div>
+			<div class="info">
+				Studied basic algorithmic techniques using functional programming languages - Lisp and Prolog under the guidance of <a href="http://www.iitkgp.ac.in/department/MA/faculty/ma-pawan#resp-tab1" target="_blank">Prof. Pawan Kumar </a>.
+			</div>
+		</li>
+		<li>
+			<span class="title">Exchange Student at Bangkok University </span> <div class="float-right time">June 2017 - Aug 2017</div>
+			<div class="info">
+				Served as a primary instructor for cultural engagements along with teaching basic english and computer science to primary grade students at RangsonWittaya School, Nakhon Sawan under the AIESEC SDG #4 programme.
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+<div class="footer footer2">
+	<div class="content white-text">
+		Created and designed by <a style="color:white" href="https://junweiliang.me">Junwei Liang</a> in CMU and Diganta Misra. Modified by Mughees.
+	</div>
+</div>
+
+</body>
 </html>
